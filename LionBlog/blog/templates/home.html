@@ -1,0 +1,9 @@
+<h1>🤍블로그 프로젝트💚</h1>
+<a href="{% url 'new' %}">새로운 글 만들기👋</a>
+{% for post in posts.all %}
+<h3>{{post.title}}</h3>
+{{post.date}}
+<br />
+{{post.summary}}
+<a href="{%url 'detail' post.id%}">...more</a>
+{% endfor %}
