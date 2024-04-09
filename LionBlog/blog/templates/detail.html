@@ -5,3 +5,23 @@
 <br />
 <a href="{% url 'home' %}">홈으로 돌아가기</a>
 <a href="{% url 'delete' post.id %}">삭제하기</a>
+
+<br>
+<hr>
+<a class="add_comment" href="{% url 'add_comment' post.id %}">댓글달기</a>
+{% for comment in post.comments.all %}
+    <div class="comment">
+        <strong class="username">{{comment.username}}</strong>
+        <div class="date">{{comment.created_at }}</div>
+        <p>{{comment.comment_text | linebreaks }}</p>
+    </div>
+
+{% empty %}
+    <p>아직 댓글이 없어요</p>
+{% endfor %}
+
+<div>
+    {% for hashtag in hashtags.all %}
+    #{{ hashtag }}
+    {% endfor %}
+</div>
