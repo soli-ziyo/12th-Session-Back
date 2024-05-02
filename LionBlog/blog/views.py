@@ -68,3 +68,4 @@ def add_comment(request, post_id):
         form = CommentForm()
 
     return render(request, 'add_comment.html', {'form':form})
+

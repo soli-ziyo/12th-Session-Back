@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path
 
 import blog.views
+import accounts.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,4 +30,7 @@ urlpatterns = [
     path('update_page/<int:post_id>',blog.views.update_page, name="update_page"),
     path('update/<int:post_id>',blog.views.update,name="update"),
     path('<int:post_id>/comment',blog.views.add_comment,name="add_comment"),
+    path('accounts/login', accounts.views.login_view, name="login"),
+    path('accounts/logout', accounts.views.logout_view, name="logout"),
+    path('accounts/signup', accounts.views.signup_view, name="signup"),
 ]

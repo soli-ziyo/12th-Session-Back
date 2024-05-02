@@ -1,3 +1,17 @@
+{% if not user.is_authenticated %}
+    <a href="{% url 'signup' %}">회원가입하기</a>
+    <a href="{% url 'login' %}">로그인하기</a>
+{% endif %}
+
+{% if user.is_authenticated %}
+    <a href="{% url 'logout' %}">로그아웃하기</a>
+    <p>로그인 한 사람: {{user.username }}</p>
+        <br>
+        <hr>
+        아이디:{{user.username}} 닉네임: {{user.nickname}} 대학: {{user.university}} 위치: {{user.location}}
+{% endif %}
+
+
 <h1>🤍블로그 프로젝트💚</h1>
 <a href="{% url 'new' %}">새로운 글 만들기👋</a>
 {% for post in posts.all %}
@@ -7,3 +21,4 @@
 {{post.summary}}
 <a href="{%url 'detail' post.id%}">...more</a>
 {% endfor %}
+
