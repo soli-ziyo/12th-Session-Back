@@ -1,5 +1,9 @@
 <h3>{{post.title}}</h3>
 {{post.date}}
+<br>
+{% if post.photo %}
+<img src="{{ post.photo.url }}" alt="" height="200px;">
+{% endif %}
 <br />
 {{post.body}}
 <br />

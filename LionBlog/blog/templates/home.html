@@ -22,3 +22,15 @@
 <a href="{%url 'detail' post.id%}">...more</a>
 {% endfor %}
 
+
+
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/test.css' %}">
+<link rel="stylesheet" href="{% static 'css/test2.css' %}">
+<title>Home</title>
+{% endblock %}
+
+
+
