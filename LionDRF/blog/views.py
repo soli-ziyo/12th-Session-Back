@@ -43,4 +43,4 @@ class PostDetail(views.APIView):
     def delete(self, request, pk, format=None):
         post=get_object_or_404(Post, pk=pk)
         post.delete()
-        return Response({"message":"게시물 삭제 성공"})
+        return Response({"message":"post delete!"})
